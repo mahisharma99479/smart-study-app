@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Deep Indigo + Warm Cream palette */
+    --background: 0.97 0.008 85;
+    --foreground: 0.18 0.04 265;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 265;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 265;
+
+    --primary: 0.45 0.22 265;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.93 0.02 265;
+    --secondary-foreground: 0.25 0.08 265;
+
+    --muted: 0.93 0.015 85;
+    --muted-foreground: 0.5 0.04 265;
+
+    --accent: 0.68 0.22 38;
+    --accent-foreground: 0.99 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 265;
+    --input: 0.88 0.02 265;
+    --ring: 0.55 0.18 265;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.45 0.22 265;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Subject colors — L C H */
+    --subject-hindi: 0.62 0.22 25;
+    --subject-english: 0.55 0.2 265;
+    --subject-physics: 0.55 0.18 200;
+    --subject-chemistry: 0.55 0.22 140;
+    --subject-bio-maths: 0.58 0.2 320;
+    --subject-history: 0.62 0.2 60;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    background-image:
+      radial-gradient(circle at 15% 20%, oklch(0.88 0.06 265 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 85% 80%, oklch(0.9 0.05 38 / 0.25) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+/* Subject card gradients */
+.subject-hindi {
+  background: linear-gradient(135deg, oklch(0.92 0.06 25) 0%, oklch(0.96 0.03 25) 100%);
+  border-color: oklch(0.82 0.1 25);
+}
+.subject-hindi .subject-icon-bg {
+  background: oklch(0.62 0.22 25);
+}
+
+.subject-english {
+  background: linear-gradient(135deg, oklch(0.92 0.06 265) 0%, oklch(0.96 0.03 265) 100%);
+  border-color: oklch(0.75 0.12 265);
+}
+.subject-english .subject-icon-bg {
+  background: oklch(0.55 0.2 265);
+}
+
+.subject-physics {
+  background: linear-gradient(135deg, oklch(0.92 0.06 200) 0%, oklch(0.96 0.03 200) 100%);
+  border-color: oklch(0.75 0.1 200);
+}
+.subject-physics .subject-icon-bg {
+  background: oklch(0.55 0.18 200);
+}
+
+.subject-chemistry {
+  background: linear-gradient(135deg, oklch(0.92 0.06 140) 0%, oklch(0.96 0.03 140) 100%);
+  border-color: oklch(0.75 0.1 140);
+}
+.subject-chemistry .subject-icon-bg {
+  background: oklch(0.5 0.2 140);
+}
+
+.subject-biology_maths {
+  background: linear-gradient(135deg, oklch(0.92 0.06 320) 0%, oklch(0.96 0.03 320) 100%);
+  border-color: oklch(0.75 0.12 320);
+}
+.subject-biology_maths .subject-icon-bg {
+  background: oklch(0.55 0.2 320);
+}
+
+.subject-history {
+  background: linear-gradient(135deg, oklch(0.93 0.07 60) 0%, oklch(0.96 0.03 60) 100%);
+  border-color: oklch(0.8 0.12 60);
+}
+.subject-history .subject-icon-bg {
+  background: oklch(0.58 0.18 60);
+}
+
+/* Notebook line texture for content areas */
+.notebook-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    oklch(0.88 0.015 265 / 0.5) 27px,
+    oklch(0.88 0.015 265 / 0.5) 28px
+  );
+  background-size: 100% 28px;
+}
